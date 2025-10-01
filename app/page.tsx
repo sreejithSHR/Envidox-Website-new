@@ -9,6 +9,7 @@ import TrustedBy from "@/components/trusted";
 import OrbitingCircles from "@/components/prototype-img";
 import AboutUsSection from "@/components/About";
 import ServicesSection from "@/components/servicesection";
+import ProductsSection from "@/components/Products";
 import FeaturesBento from "@/components/feature-bento";
 import LightBg from "@/components/light-bg";
 import Integrations from "@/components/integrations";
@@ -120,15 +121,18 @@ export default function Home() {
         </div>
       </div>
       <TrustedBy />
-      <OrbitingCircles />
+      
       <AboutUsSection />
+      <OrbitingCircles />
       <ServicesSection />
       <div className="mt-20 lg:mt-60 flex-col justify-center items-center mx-auto">
         <h1 className="text-2xl lg:text-4xl font-semibold flex- justify-center items-center mx-auto text-center">
           Features
         </h1>
         <FeaturesBento />
+        
       </div>
+      <ProductsSection />
       <LightBg />
       <Integrations />
       <LastButNotLeast />
