@@ -130,8 +130,9 @@ function ServicesSection() {
                   <ServiceCard
                     service={service}
                     index={index}
-                    hoveredIndex={hoveredIndex}
-                    setHoveredIndex={setHoveredIndex}
+                    hoveredIndex={hoveredIndex} setHoveredIndex={function (index: number | null): void {
+                      throw new Error('Function not implemented.');
+                    } }                    
                   />
                 </div>
               </div>
@@ -161,7 +162,12 @@ function ServicesSection() {
   );
 }
 
-function ServiceCard({ service, index, hoveredIndex, setHoveredIndex }) {
+function ServiceCard({ service, index, hoveredIndex, setHoveredIndex }:{
+  service: any;
+  index: number;
+  hoveredIndex: number | null;
+  setHoveredIndex: (index: number | null) => void;
+}) {
   const isHovered = hoveredIndex === index;
 
   return (
