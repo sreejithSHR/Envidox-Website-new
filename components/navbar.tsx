@@ -51,7 +51,7 @@ export const Navbar = () => {
   return (
     <NextUINavbar
       position="sticky"
-      className="border-2 border-cyan-400/50 rounded-full max-w-[60%] flex justify-center items-center mx-auto mt-3 bg-black/40 backdrop-blur-xl shadow-neon-blue"
+      className="dark:border-none border rounded-full max-w-[60%] flex justify-center items-center mx-auto mt-3 bg-opacity-20 backdrop-filter backdrop-blur-lg bg-white/10"
     >
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
@@ -88,21 +88,22 @@ export const Navbar = () => {
           <Button
             isExternal
             as={Link}
-            className="text-sm font-bold border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400/10"
+            className="text-sm font-normal text-default-600"
             href={siteConfig.links.sponsor}
             color="primary"
-            variant="bordered"
+            variant="light"
           >
-            LOGIN
+            Login
           </Button>
           <Button
             isExternal
             as={Link}
-            className="text-sm font-bold text-black bg-gradient-to-r from-cyan-400 to-blue-500 shadow-neon-cyan border-2 border-cyan-400 hover:shadow-neon-blue"
+            className="text-sm font-normal text-default-600 text-white bg-blue-600"
             href={siteConfig.links.sponsor}
             color="primary"
+            variant="shadow"
           >
-            START FREE TRIAL
+            Start Free Trial
           </Button>
         </NavbarItem>
       </NavbarContent>
