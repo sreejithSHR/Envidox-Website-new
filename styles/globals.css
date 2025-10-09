@@ -1,3 +1,179 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    position: relative;
+    overflow-x: hidden;
+    background: #000000;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+      linear-gradient(90deg, rgba(255, 0, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(rgba(255, 165, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 0, 0.02) 1px, transparent 1px),
+      linear-gradient(rgba(0, 255, 0, 0.02) 1px, transparent 1px);
+    background-size: 50px 50px, 50px 50px, 25px 25px, 25px 25px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      #ff0000,
+      #ff9900,
+      #ffff00,
+      #00ff00,
+      #00ffff,
+      #0099ff,
+      #9900ff,
+      #ff00ff,
+      transparent
+    );
+    animation: scanline 8s linear infinite;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.6;
+  }
+}
+
+@layer utilities {
+  .retro-border {
+    border: 2px solid #0088ff;
+    box-shadow: 4px 4px 0px rgba(0, 136, 255, 0.3);
+  }
+
+  .neon-text {
+    text-shadow:
+      0 0 10px rgba(0, 136, 255, 0.8),
+      0 0 20px rgba(0, 136, 255, 0.6),
+      0 0 30px rgba(0, 136, 255, 0.4);
+  }
+
+  .cyber-panel {
+    background: linear-gradient(135deg, rgba(0, 136, 255, 0.1) 0%, rgba(0, 136, 255, 0.05) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 136, 255, 0.3);
+  }
+
+  .retro-card {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .retro-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+  }
+
+  .retro-card:hover::before {
+    left: 100%;
+  }
+
+  .rainbow-gradient-bg {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 0, 0, 0.1) 0%,
+      rgba(255, 165, 0, 0.1) 14%,
+      rgba(255, 255, 0, 0.1) 28%,
+      rgba(0, 255, 0, 0.1) 42%,
+      rgba(0, 255, 255, 0.1) 56%,
+      rgba(0, 0, 255, 0.1) 70%,
+      rgba(139, 0, 255, 0.1) 84%,
+      rgba(255, 0, 255, 0.1) 100%
+    );
+    background-size: 300% 300%;
+    animation: gradient-shift 8s ease infinite;
+  }
+
+  .rainbow-border {
+    border-width: 3px;
+    border-style: solid;
+    animation: rainbow-border 6s linear infinite;
+  }
+
+  .rainbow-border-static {
+    border-width: 3px;
+    border-style: solid;
+    border-image: linear-gradient(
+      135deg,
+      #ff0000 0%,
+      #ff9900 14%,
+      #ffff00 28%,
+      #00ff00 42%,
+      #00ffff 56%,
+      #0099ff 70%,
+      #9900ff 84%,
+      #ff00ff 100%
+    ) 1;
+  }
+
+  .rainbow-text {
+    background: linear-gradient(
+      135deg,
+      #ff0000 0%,
+      #ff9900 14%,
+      #ffff00 28%,
+      #00ff00 42%,
+      #00ffff 56%,
+      #0099ff 70%,
+      #9900ff 84%,
+      #ff00ff 100%
+    );
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 8s ease infinite;
+  }
+
+  .symmetric-container {
+    position: relative;
+  }
+
+  .symmetric-container::before,
+  .symmetric-container::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  .symmetric-container::before {
+    top: -100px;
+    left: -100px;
+    background: linear-gradient(135deg, #ff0000, #ff9900, #ffff00);
+  }
+
+  .symmetric-container::after {
+    bottom: -100px;
+    right: -100px;
+    background: linear-gradient(135deg, #00ffff, #0099ff, #9900ff);
+  }
+}
