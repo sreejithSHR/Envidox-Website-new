@@ -17,11 +17,14 @@
     width: 100%;
     height: 100%;
     background:
+
       linear-gradient(90deg, rgba(255, 0, 0, 0.03) 1px, transparent 1px),
       linear-gradient(rgba(255, 165, 0, 0.03) 1px, transparent 1px),
       linear-gradient(90deg, rgba(255, 255, 0, 0.02) 1px, transparent 1px),
       linear-gradient(rgba(0, 255, 0, 0.02) 1px, transparent 1px);
     background-size: 50px 50px, 50px 50px, 25px 25px, 25px 25px;
+
+
     pointer-events: none;
     z-index: 1;
   }
@@ -33,23 +36,13 @@
     left: 0;
     width: 100%;
     height: 3px;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      #ff0000,
-      #ff9900,
-      #ffff00,
-      #00ff00,
-      #00ffff,
-      #0099ff,
-      #9900ff,
-      #ff00ff,
-      transparent
-    );
+
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.6), transparent);
     animation: scanline 8s linear infinite;
     pointer-events: none;
     z-index: 9999;
-    opacity: 0.6;
+    opacity: 0.4;
+
   }
 }
 
@@ -92,6 +85,7 @@
     left: 100%;
   }
 
+
   .rainbow-gradient-bg {
     background: linear-gradient(
       135deg,
@@ -108,72 +102,5 @@
     animation: gradient-shift 8s ease infinite;
   }
 
-  .rainbow-border {
-    border-width: 3px;
-    border-style: solid;
-    animation: rainbow-border 6s linear infinite;
-  }
 
-  .rainbow-border-static {
-    border-width: 3px;
-    border-style: solid;
-    border-image: linear-gradient(
-      135deg,
-      #ff0000 0%,
-      #ff9900 14%,
-      #ffff00 28%,
-      #00ff00 42%,
-      #00ffff 56%,
-      #0099ff 70%,
-      #9900ff 84%,
-      #ff00ff 100%
-    ) 1;
-  }
-
-  .rainbow-text {
-    background: linear-gradient(
-      135deg,
-      #ff0000 0%,
-      #ff9900 14%,
-      #ffff00 28%,
-      #00ff00 42%,
-      #00ffff 56%,
-      #0099ff 70%,
-      #9900ff 84%,
-      #ff00ff 100%
-    );
-    background-size: 300% 300%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradient-shift 8s ease infinite;
-  }
-
-  .symmetric-container {
-    position: relative;
-  }
-
-  .symmetric-container::before,
-  .symmetric-container::after {
-    content: '';
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    filter: blur(100px);
-    opacity: 0.3;
-    pointer-events: none;
-  }
-
-  .symmetric-container::before {
-    top: -100px;
-    left: -100px;
-    background: linear-gradient(135deg, #ff0000, #ff9900, #ffff00);
-  }
-
-  .symmetric-container::after {
-    bottom: -100px;
-    right: -100px;
-    background: linear-gradient(135deg, #00ffff, #0099ff, #9900ff);
-  }
 }
