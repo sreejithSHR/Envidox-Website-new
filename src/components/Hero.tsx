@@ -1,4 +1,4 @@
-import React from "react";
+
 
 export default function Hero() {
   return (
@@ -18,7 +18,7 @@ export default function Hero() {
         </p>
 
         <div className="flex items-center justify-center gap-4">
-          <button className="px-6 py-3 rounded-full bg-green-400 hover:bg-green-450 shadow-md text-black font-semibold">
+          <button className="px-6 py-3 rounded-full bg-cyan-200 hover:bg-green-450 shadow-md text-black font-semibold">
             Get started
           </button>
         </div>

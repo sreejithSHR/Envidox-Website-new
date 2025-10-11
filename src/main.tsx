@@ -308,16 +308,16 @@ function Root() {
           {/* Logo */}
           <div className="flex items-center gap-2">
             <div className="w-6 h-6 rounded-md bg-black" />
-            <span className="font-semibold text-gray-900 text-sm sm:text-base">Thinkbot</span>
+            <span className="font-semibold text-gray-900 text-sm sm:text-base">Envidox Solutions</span>
           </div>
 
           {/* Nav Links - Hidden on mobile, visible on md+ */}
           <ul className="hidden md:flex items-center gap-6 lg:gap-8 text-gray-700 text-sm font-medium">
             <li className="hover:text-gray-900 transition-colors cursor-pointer">About</li>
-            <li className="hover:text-gray-900 transition-colors cursor-pointer">Features</li>
-            <li className="hover:text-gray-900 transition-colors cursor-pointer">Testimonials</li>
-            <li className="hover:text-gray-900 transition-colors cursor-pointer">Pricing</li>
-            <li className="hover:text-gray-900 transition-colors cursor-pointer">FAQs</li>
+            <li className="hover:text-gray-900 transition-colors cursor-pointer">Services</li>
+            <li className="hover:text-gray-900 transition-colors cursor-pointer">Products</li>
+            <li className="hover:text-gray-900 transition-colors cursor-pointer">World Of 3D</li>
+            <li className="hover:text-gray-900 transition-colors cursor-pointer">Games</li>
           </ul>
 
           {/* Mobile Menu Button - Visible on mobile */}
@@ -327,7 +327,7 @@ function Root() {
 
           {/* Desktop Button - Hidden on mobile, visible on md+ */}
           <button className="hidden md:block bg-black text-white text-sm px-5 py-2.5 rounded-full hover:bg-gray-800 transition-all shadow-lg hover:shadow-xl border border-gray-700">
-            Remix Template
+            Contact Now
           </button>
         </nav>
       </header>
@@ -343,9 +343,9 @@ function Root() {
       <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-3rem)] sm:w-[calc(100%-4rem)] md:hidden">
         <nav className="flex justify-around items-center px-4 py-3 bg-white/95 backdrop-blur-md rounded-full border-2 border-gray-300/80 shadow-[0_8px_32px_rgba(0,0,0,0.15)]">
           <button className="text-xs text-gray-700 font-medium hover:text-gray-900 transition-colors px-2 py-1">About</button>
-          <button className="text-xs text-gray-700 font-medium hover:text-gray-900 transition-colors px-2 py-1">Features</button>
-          <button className="text-xs text-gray-700 font-medium hover:text-gray-900 transition-colors px-2 py-1">Pricing</button>
-          <button className="text-xs text-gray-700 font-medium hover:text-gray-900 transition-colors px-2 py-1">FAQs</button>
+          <button className="text-xs text-gray-700 font-medium hover:text-gray-900 transition-colors px-2 py-1">Services</button>
+          <button className="text-xs text-gray-700 font-medium hover:text-gray-900 transition-colors px-2 py-1">Products</button>
+          <button className="text-xs text-gray-700 font-medium hover:text-gray-900 transition-colors px-2 py-1">World Of 3D</button>
         </nav>
       </div>
     </div>

@@ -1,7 +1,7 @@
-import React from "react";
-import Header from "./components/Header";
+
+
 import Hero from "./components/Hero";
-import ExperienceCard from "./components/ExperienceCard";
+
 import CTASection from "./components/CTASection";
 import Footer from "./components/Footer";
 import OrbitingCircles from "./components/orbiting"
@@ -17,87 +17,10 @@ import GameInDevelopment from "./components/Gamedev"
 
 
 
-import {
-  Rocket,
-  Gamepad2,
-  Sparkles,
-  Coffee,
-  Zap,
-  PartyPopper,
-  Music,
-  Palette,
-  Users,
-} from "lucide-react";
+
 
 export default function App() {
-  const experiences = [
-    {
-      title: "Space Party",
-      description:
-        "Dance with aliens on Mars. DJ sets so good, even astronauts called in sick.",
-      icon: Rocket,
-      gradient: "from-blue-500 to-cyan-500",
-      emoji: "🚀",
-    },
-    {
-      title: "Ninja Playground",
-      description:
-        "Slice fruits, dodge lasers, feel like a boss. No ninja training required.",
-      icon: Gamepad2,
-      gradient: "from-red-500 to-orange-500",
-      emoji: "🥷",
-    },
-    {
-      title: "Magic Studio",
-      description:
-        "Paint with light, sculpt with sound. It's like Photoshop met a wizard.",
-      icon: Palette,
-      gradient: "from-pink-500 to-purple-500",
-      emoji: "🎨",
-    },
-    {
-      title: "Concert Universe",
-      description:
-        "Front row to every show. Your neighbors won't even know you're screaming.",
-      icon: Music,
-      gradient: "from-violet-500 to-purple-500",
-      emoji: "🎵",
-    },
-    {
-      title: "Social Hangout",
-      description:
-        "Meet people worldwide without putting on pants. The future is here.",
-      icon: Users,
-      gradient: "from-green-500 to-emerald-500",
-      emoji: "👋",
-    },
-    {
-      title: "Adrenaline Rush",
-      description:
-        "Bungee jump, surf tsunamis, no insurance needed. Pure virtual chaos.",
-      icon: Zap,
-      gradient: "from-yellow-500 to-orange-500",
-      emoji: "⚡",
-    },
-  ];
-
-  const features = [
-    {
-      title: "Zero Nausea Tech",
-      description:
-        "Our secret sauce keeps your lunch where it belongs. Game longer, feel better.",
-    },
-    {
-      title: "Play Anywhere",
-      description:
-        "Quest, PSVR, your toaster (kidding on that last one). We support all headsets.",
-    },
-    {
-      title: "Weekly Drops",
-      description:
-        "New worlds every Tuesday. We're basically Netflix for your brain.",
-    },
-  ];
+  
 
   return (
     <div className="min-h-screen  text-gray-900 relative overflow-hidden">
