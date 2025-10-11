@@ -87,12 +87,12 @@ function OrbitingCircles() {
       <div className="flex-1 text-center lg:text-left space-y-4 lg:space-y-6 z-20 order-1 lg:order-1">
         <div className="space-y-2">
           <h3 className="text-xs sm:text-sm font-semibold text-violet-600 uppercase tracking-wide">
-            Integrations
+            Vision
           </h3>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black">
             Connect Everything
           </h2>
-          <p className="text-sm sm:text-base lg:text-lg text-gray-400 max-w-md mx-auto lg:mx-0">
+          <p className="text-sm sm:text-base lg:text-lg text-grey-700 max-w-md mx-auto lg:mx-0">
             Seamlessly integrate with your favorite tools and platforms to
             streamline your workflow
           </p>
@@ -209,12 +209,12 @@ function OrbitingCircles() {
       <div className="flex-1 text-center lg:text-right space-y-4 lg:space-y-6 z-20 order-3 lg:order-3">
         <div className="space-y-2">
           <h3 className="text-xs sm:text-sm font-semibold text-violet-600 uppercase tracking-wide">
-            Automation
+            Mission
           </h3>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black">
             Work Smarter
           </h2>
-          <p className="text-sm sm:text-base lg:text-lg text-gray-400 max-w-md mx-auto lg:ml-auto lg:mr-0">
+          <p className="text-sm sm:text-base lg:text-lg text-gray-700 max-w-md mx-auto lg:ml-auto lg:mr-0">
             Automate repetitive tasks and focus on what matters most with
             intelligent workflows
           </p>

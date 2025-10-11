@@ -1,23 +1,9 @@
-import React from 'react';
-import { Coffee, Sparkles, Target, Users, Zap, Heart } from 'lucide-react';
+
+import { Coffee, Sparkles,  Heart } from 'lucide-react';
 
 const About = () => {
   const features = [
-    {
-      icon: Target,
-      title: "Mission Driven",
-      description: "We're on a mission to make exceptional design accessible to everyone, regardless of technical background."
-    },
-    {
-      icon: Users,
-      title: "Community First",
-      description: "Our community of creators and developers helps shape everything we build and share."
-    },
-    {
-      icon: Zap,
-      title: "Lightning Fast",
-      description: "Built with performance in mind, ensuring smooth experiences across all devices and platforms."
-    },
+    
     {
       icon: Heart,
       title: "Crafted with Care",
@@ -42,15 +28,15 @@ const About = () => {
           <div className="text-center mb-8 md:mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-50 to-purple-50 rounded-full border border-blue-200 mb-4 md:mb-6">
               <Coffee className="w-4 h-4 text-blue-600" />
-              <span className="text-sm font-medium text-blue-700">Why We're Different</span>
+              <span className="text-sm font-medium text-blue-700">Not Another VR Agency</span>
             </div>
 
             <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
-              Built for Humans
+              Envidox Solutions
             </h3>
             <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-              We obsess over details so you can focus on having the time of your life. 
-              Our tools are designed with real people in mind, not just technical specifications.
+              Envidox isn’t another VR agency — we’re innovators building the pipelines that power imagination.<br />
+              Our tools simplify complexity, accelerate creation, and expand what’s possible
             </p>
           </div>
 

@@ -1,20 +1,21 @@
-
+import WorldShippingIcon from "./Icons/WorldShippingIcon";
 
 export default function Hero() {
   return (
     <section className="pt-[96px] pb-16"> {/* leave space for fixed header */}
       <div className="max-w-[1000px] mx-auto text-center px-6">
         <div className="inline-flex items-center gap-3 px-4 py-2 bg-white rounded-full border border-gray-200 shadow-sm mb-6">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M3 12h18" stroke="#000" strokeWidth="1.5"/></svg>
-          <span className="text-sm text-gray-700">Made in Framer</span>
+          <WorldShippingIcon width={30} height={30} />
+          
+          <span className="text-sm text-gray-700">World Of Wonders</span>
         </div>
 
         <h1 className="text-6xl md:text-7xl font-extrabold leading-tight mb-6">
-          Elevate Your Brand with <br /> Smart AI Tools
+          Tomorrow isn’t coming--   <br /> it’s already built here
         </h1>
 
         <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-          Boost efficiency, improve content quality, and grow your brand using intelligent, scalable AI-powered tools.
+          Step into the World Of wonders That we Translate your Innovation into Reality With AR/VR and AI
         </p>
 
         <div className="flex items-center justify-center gap-4">
