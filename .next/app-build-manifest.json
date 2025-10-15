@@ -1,0 +1,36 @@
+{
+  "pages": {
+    "/page": [
+      "static/chunks/[root of the server]__e2ab11._.css",
+      "static/chunks/be63a_tailwind-merge_dist_lib_3e1c27._.js",
+      "static/chunks/node_modules__pnpm_f89bde._.js",
+      "static/chunks/node_modules__pnpm_6291f8._.js",
+      "static/chunks/node_modules__pnpm_1995c1._.js",
+      "static/chunks/ae632_next_b2e2bd._.js",
+      "static/chunks/97bc2_@internationalized_date_dist_b91eda._.js",
+      "static/chunks/node_modules__pnpm_6db8b1._.js",
+      "static/chunks/cf350_framer-motion_dist_es_0af4bf._.js",
+      "static/chunks/ab471_@nextui-org_navbar_dist_a0882e._.js",
+      "static/chunks/487d8_@nextui-org_react-rsc-utils_dist_11e606._.js",
+      "static/chunks/node_modules__pnpm_c7fbaf._.js",
+      "static/chunks/app_9e4cf7._.js",
+      "static/chunks/app_layout_tsx_41f475._.js",
+      "static/chunks/app_error_tsx_6c72c3._.js",
+      "static/chunks/app_error_tsx_e5220d._.js",
+      "static/chunks/_f092eb._.js",
+      "static/chunks/node_modules__pnpm_491038._.js",
+      "static/chunks/e3b6d_@nextui-org_dom-animation_dist_index_mjs_984273._.js",
+      "static/chunks/app_page_tsx_0606fb._.js",
+      "static/chunks/ae632_next_dist_compiled_react_8f3465._.js",
+      "static/chunks/ae632_next_dist_compiled_react-dom_cjs_react-dom_development_237775.js",
+      "static/chunks/ae632_next_dist_compiled_react-dom_ccaa85._.js",
+      "static/chunks/ae632_next_dist_compiled_2de704._.js",
+      "static/chunks/ae632_next_dist_client_f22acc._.js",
+      "static/chunks/ae632_next_dist_ffded1._.js",
+      "static/chunks/90481_@swc_helpers_cjs_e55b81._.js",
+      "static/chunks/[turbopack]_dev_client_hmr-client_ts_7ffffa._.js",
+      "static/chunks/ae632_next_dist_esm_build_templates_app-page_a190d8.js",
+      "static/chunks/ae632_next_dist_esm_build_templates_app-page_ec100b.js"
+    ]
+  }
+}
