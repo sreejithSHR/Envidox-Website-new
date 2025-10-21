@@ -1,5 +1,5 @@
 import React from 'react';
-import { PartyPopper, Rocket, Palette, Code, Zap, Shield, Users, Sparkles } from 'lucide-react';
+import { PartyPopper, Rocket, Cpu, Eye, Globe, Cuboid, MessageCircle, Sparkles } from 'lucide-react';
 
 interface ServiceCardProps {
   icon: React.ElementType;
@@ -17,20 +17,25 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   gradient 
 }) => {
   return (
-    <div className="group bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-lg transition-all duration-300 hover:border-transparent">
-      <div className={`w-14 h-14 rounded-xl ${gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-        <Icon className="w-7 h-7 text-white" />
+    <div className="group bg-white rounded-2xl border border-gray-200 p-5 hover:shadow-md transition-all duration-300 hover:border-transparent">
+      
+      {/* Header Row with Icon + Title */}
+      <div className="flex items-center gap-3 mb-2">
+        <div className={`w-10 h-10 rounded-lg ${gradient} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+          <Icon className="w-5 h-5 text-white" />
+        </div>
+        <h3 className="text-lg font-semibold text-gray-900 group-hover:text-gray-800 transition-colors leading-snug">
+          {title}
+        </h3>
       </div>
-      
-      <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-gray-800 transition-colors">
-        {title}
-      </h3>
-      
-      <p className="text-gray-600 mb-4 leading-relaxed">
+
+      {/* Description */}
+      <p className="text-gray-600 mb-3 text-sm leading-relaxed text-left">
         {description}
       </p>
       
-      <ul className="space-y-2">
+      {/* Features List */}
+      <ul className="space-y-1.5 text-left">
         {features.map((feature, index) => (
           <li key={index} className="flex items-center gap-2 text-sm text-gray-600">
             <div className="w-1.5 h-1.5 rounded-full bg-green-400" />
@@ -39,7 +44,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         ))}
       </ul>
       
-      <button className="w-full mt-6 py-2.5 text-sm font-medium text-gray-700 bg-gray-50 rounded-lg border border-gray-200 hover:bg-gray-100 hover:border-gray-300 transition-colors group-hover:shadow-sm">
+      {/* Button */}
+      <button className="w-full mt-4 py-2 text-sm font-medium text-gray-700 bg-gray-50 rounded-md border border-gray-200 hover:bg-gray-100 hover:border-gray-300 transition-colors group-hover:shadow-sm">
         Learn More
       </button>
     </div>
@@ -48,48 +54,84 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 
 const Services = () => {
   const services = [
-    {
-      icon: Rocket,
-      title: "Web Development",
-      description: "Build blazing-fast, modern websites and web applications with cutting-edge technologies.",
-      features: ["React & Next.js", "TypeScript", "Responsive Design", "SEO Optimized"],
-      gradient: "bg-gradient-to-br from-purple-500 to-pink-500"
-    },
-    {
-      icon: Palette,
-      title: "UI/UX Design",
-      description: "Create beautiful, intuitive interfaces that users love and enjoy interacting with.",
-      features: ["User Research", "Wireframing", "Prototyping", "Design Systems"],
-      gradient: "bg-gradient-to-br from-blue-500 to-cyan-400"
-    },
-    {
-      icon: Code,
-      title: "Mobile Development",
-      description: "Develop cross-platform mobile applications that work seamlessly on iOS and Android.",
-      features: ["React Native", "Flutter", "Native Performance", "App Store Ready"],
-      gradient: "bg-gradient-to-br from-green-500 to-emerald-400"
-    },
-    {
-      icon: Zap,
-      title: "Performance Optimization",
-      description: "Speed up your existing applications and improve user experience with expert optimization.",
-      features: ["Lighthouse Audit", "Code Splitting", "Caching Strategies", "Bundle Optimization"],
-      gradient: "bg-gradient-to-br from-orange-500 to-red-500"
-    },
-    {
-      icon: Shield,
-      title: "Security & Maintenance",
-      description: "Keep your applications secure and up-to-date with ongoing maintenance and monitoring.",
-      features: ["Security Audits", "Regular Updates", "Backup Solutions", "24/7 Monitoring"],
-      gradient: "bg-gradient-to-br from-indigo-500 to-purple-600"
-    },
-    {
-      icon: Users,
-      title: "Consulting & Strategy",
-      description: "Get expert advice on your digital strategy and technology stack decisions.",
-      features: ["Tech Stack Selection", "Architecture Review", "Team Training", "Project Planning"],
-      gradient: "bg-gradient-to-br from-pink-500 to-rose-500"
-    }
+   {
+    icon: Rocket,
+    title: "Web Design & Development",
+    description:
+      "We build responsive, lead-generating websites that look great and perform under pressure.",
+    features: [
+      "Custom Websites & Web Apps",
+      "SEO & Performance Tuning",
+      "Responsive & Mobile-First Design",
+      "Modern Frameworks (React / Next)"
+    ],
+    gradient: "bg-gradient-to-br from-purple-500 to-pink-500"
+  },
+  {
+    icon: Cuboid,  // or 3D icon
+    title: "3D Design & Modelling",
+    description:
+      "Create realistic, interactive 3D models for visualization, WebXR, and immersive product demos.",
+    features: [
+      "High-poly & Low-poly Modeling",
+      "Texture & Material Design",
+      "WebXR Integration",
+      "Interactive 3D Scenes"
+    ],
+    gradient: "bg-gradient-to-br from-blue-500 to-cyan-400"
+  },
+  {
+    icon: MessageCircle,
+    title: "AI Chatbot Development & Automation",
+    description:
+      "Design smart, automated chat systems to streamline business workflows and improve customer engagement.",
+    features: [
+      "Custom Chatbot Logic",
+      "API & CRM Integration",
+      "Natural Language Processing",
+      "Automation of Repetitive Tasks"
+    ],
+    gradient: "bg-gradient-to-br from-green-500 to-emerald-400"
+  },
+  {
+    icon: Globe,
+    title: "AR/VR Development",
+    description:
+      "Deliver immersive augmented and virtual reality experiences tailored to your business and audience.",
+    features: [
+      "AR & VR App Creation",
+      "WebXR Experiences",
+      "3D Interactivity",
+      "Cross-platform Deployment"
+    ],
+    gradient: "bg-gradient-to-br from-orange-500 to-red-500"
+  },
+  {
+    icon: Cpu,
+    title: "Custom AI Pipeline Development",
+    description:
+      "We architect and build bespoke AI workflows that power data processing, prediction, automation, and more.",
+    features: [
+      "Model Training & Deployment",
+      "Pipeline Orchestration",
+      "Data Engineering",
+      "Custom Tool Integrations"
+    ],
+    gradient: "bg-gradient-to-br from-indigo-500 to-purple-600"
+  },
+  {
+    icon: Eye,
+    title: "Virtual Tours",
+    description:
+      "Enable users to explore spaces virtually — perfect for real estate, hospitality, campuses, and more.",
+    features: [
+      "360° Photography & Stitching",
+      "Panorama Navigation",
+      "Embedded Hotspots & Info",
+      "Integration with Google Maps"
+    ],
+    gradient: "bg-gradient-to-br from-pink-500 to-rose-500"
+  }
   ];
 
   return (
