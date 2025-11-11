@@ -3,19 +3,6 @@ import { ArrowRight, Play, Zap, Eye, Globe, Sparkles, Users, Smartphone } from '
 
 const WorldOf3D = () => {
   const bentoCards = [
-    
-    {
-      type: 'medium',
-      title: "Virtual Reality",
-      subtitle: "Fully immersive digital worlds",
-      description: "Step into completely virtual environments for training, entertainment, and collaboration.",
-      image: "/showcase/vr-demo.jpg", 
-      icon: Eye,
-      gradient: "from-blue-500 to-cyan-500",
-      features: ["6DOF movement", "Spatial audio", "Cross-platform"],
-      cta: "Explore VR",
-      stats: "94% user satisfaction"
-    },
     {
       type: 'large',
       title: "Augmented Reality",
@@ -27,6 +14,18 @@ const WorldOf3D = () => {
       features: ["Real-time tracking", "Interactive objects", "Multi-user experiences"],
       cta: "View AR Demo",
       stats: "87% higher engagement"
+    },
+    {
+      type: 'medium',
+      title: "Virtual Reality",
+      subtitle: "Fully immersive digital worlds",
+      description: "Step into completely virtual environments for training, entertainment, and collaboration.",
+      image: "/showcase/vr-demo.jpg", 
+      icon: Eye,
+      gradient: "from-blue-500 to-cyan-500",
+      features: ["6DOF movement", "Spatial audio", "Cross-platform"],
+      cta: "Explore VR",
+      stats: "94% user satisfaction"
     },
     {
       type: 'medium', 
