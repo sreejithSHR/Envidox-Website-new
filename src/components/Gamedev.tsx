@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import  { useRef, useEffect, useState } from 'react';
 import { Play, Calendar, ArrowRight, ArrowLeft, GamepadIcon, Star, } from 'lucide-react';
 
 const GameInDevelopment = () => {

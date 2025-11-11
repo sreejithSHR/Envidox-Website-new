@@ -11,13 +11,13 @@ interface Product {
   name: string;
   tagline: string;
   description: string;
-  price: string;
+  
   features: string[];
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   gradient: string;
   bgGradient: string;
   stats: string;
-  highlight: string;
+  
   previewType: string;
 }
 
@@ -28,65 +28,61 @@ const Products = () => {
   const products: Product[] = [
     {
       id: 1,
-      name: "SparkFlow",
-      tagline: "AI-Powered Workflow Automation",
-      description: "Transform your business processes with intelligent automation that learns and adapts to your team's needs. Experience seamless integration and powerful analytics.",
-      price: "$89/month",
+      name: "Envichat",
+      tagline: "No-Code Chatbot editor ",
+      description: "Create Chatbots for youur everyday need in Few Clicks, your website, whatsapp everything manged in one No-Code Platform.",
       features: [
-        "Unlimited workflows and automation",
-        "AI-powered task optimization",
-        "Real-time analytics dashboard",
-        "100+ third-party integrations",
-        "Priority customer support",
-        "Custom triggers and conditions"
+        "Create Chatbots In minutes",
+        "No Code or Deployment needed",
+        "AI API integration",
+        "Whatsapp Integration",
+        
       ],
       icon: Zap,
       gradient: "from-purple-500 to-pink-500",
       bgGradient: "from-purple-50 to-pink-50",
       stats: "Saves 15+ hours weekly",
-      highlight: "Most Popular",
+      
       previewType: "dashboard"
     },
     {
       id: 2,
-      name: "SecureStack",
-      tagline: "Enterprise-Grade Security Suite",
-      description: "Protect your digital assets with military-grade encryption and real-time threat detection. Comprehensive security for modern businesses.",
-      price: "$149/month",
+      name: "Production Crate",
+      tagline: "All in one Preproduction Tool",
+      description: "All In One Preproduction manger in Web helps to maintain entire preproduction for Movies, games and any creative project in one platform",
+      
       features: [
-        "End-to-end encryption protocols",
-        "Real-time threat monitoring",
-        "Compliance automation tools",
-        "Advanced team management",
-        "Detailed analytics reporting",
-        "24/7 security operations center"
+        "One stop Tool For Your Movie and Game Production",
+        "Inbuilt script writer and Storyboard Viewer",
+        "Scheduling, Task Management and Team Management",
+        "Fully Open Source ",
+        
       ],
       icon: Shield,
       gradient: "from-blue-500 to-cyan-500",
       bgGradient: "from-blue-50 to-cyan-50",
       stats: "99.9% uptime guarantee",
-      highlight: "Enterprise Ready",
+      
       previewType: "security"
     },
     {
       id: 3,
-      name: "TeamSync",
-      tagline: "Collaboration Platform",
-      description: "Bring your team together with seamless collaboration tools designed for modern remote work. Everything you need in one platform.",
-      price: "$67/month",
+      name: "NXL3D",
+      tagline: "Generate 3d Model in seconds",
+      description: "One Click AI based 3D generator. Converting Single Image to 3D model and Making Game ready asset",
+      
       features: [
-        "Unlimited team members",
-        "HD video conferencing",
-        "Secure file sharing & storage",
-        "Advanced project management",
-        "Time tracking & reporting",
-        "Custom workspaces"
+        "Faster generations",
+        "High Quality Textures",
+        "Game Ready Assets",
+        "Advanced AI pipelines",
+        
       ],
       icon: Users,
       gradient: "from-green-500 to-emerald-500",
       bgGradient: "from-green-50 to-emerald-50",
       stats: "Boosts productivity by 40%",
-      highlight: "Team Favorite",
+      
       previewType: "collaboration"
     }
   ];
@@ -210,17 +206,13 @@ const Products = () => {
                   <h3 className="text-2xl font-bold text-gray-900 mb-1">{currentProduct.name}</h3>
                   <p className="text-gray-700 font-medium text-sm mb-2">{currentProduct.tagline}</p>
                 </div>
-                {currentProduct.highlight && (
-                  <div className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full border border-gray-200">
-                    <span className="text-xs font-semibold text-gray-700">{currentProduct.highlight}</span>
-                  </div>
-                )}
+                
               </div>
 
               <p className="text-gray-600 text-sm mb-4 leading-relaxed">{currentProduct.description}</p>
 
               <div className="flex items-center justify-between mb-6">
-                <div className="text-2xl font-bold text-gray-900">{currentProduct.price}</div>
+                
                 <div className="flex items-center gap-2 text-sm text-gray-600">
                   <Star className="w-4 h-4 text-yellow-400 fill-current" />
                   <span>{currentProduct.stats}</span>
@@ -359,11 +351,7 @@ const Products = () => {
                   <div>
                     <div className="flex items-center gap-4 mb-4">
                       <h3 className="text-3xl font-bold text-gray-900">{currentProduct.name}</h3>
-                      {currentProduct.highlight && (
-                        <div className="px-4 py-2 bg-white/90 backdrop-blur-sm rounded-full border border-gray-200 shadow-sm">
-                          <span className="text-sm font-semibold text-gray-700">{currentProduct.highlight}</span>
-                        </div>
-                      )}
+                      
                     </div>
                     <p className="text-gray-700 font-medium text-xl mb-3">{currentProduct.tagline}</p>
                     <p className="text-gray-600 text-lg leading-relaxed mb-6">{currentProduct.description}</p>
@@ -372,7 +360,7 @@ const Products = () => {
 
                 {/* Stats and Price */}
                 <div className="flex items-center justify-between mb-8 p-4 bg-gray-50 rounded-xl">
-                  <div className="text-3xl font-bold text-gray-900">{currentProduct.price}</div>
+                  
                   <div className="flex items-center gap-3 text-gray-700">
                     <Star className="w-6 h-6 text-yellow-400 fill-current" />
                     <span className="font-medium text-lg">{currentProduct.stats}</span>
