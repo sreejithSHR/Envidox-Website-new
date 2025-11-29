@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 5, "column": 0}, "map": {"version":3,"sources":["/turbopack/[project]/node_modules/.pnpm/@nextui-org+dom-animation@2.1.1_framer-motion@11.1.9_react-dom@18.3.1_react@18.3.1__react@18.3.1_/node_modules/@nextui-org/dom-animation/dist/index.mjs"],"sourcesContent":["\"use client\";\n\n// src/index.ts\nimport { domAnimation } from \"framer-motion\";\nvar src_default = domAnimation;\nexport {\n  src_default as default\n};\n"],"names":[],"mappings":";;;;;AAAA;;AAIA,IAAI,cAAc,uUAAA,CAAA,eAAY"}},
-    {"offset": {"line": 14, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
-}
