@@ -1,4 +1,4 @@
-import ParticleHero from "./components/ParticleHero";
+import Hero from "./components/Hero";
 import CTASection from "./components/CTASection";
 import Footer from "./components/Footer";
 import OrbitingCircles from "./components/orbiting"
@@ -27,7 +27,7 @@ export default function App() {
       {/* Content */}
       <div className="relative z-10">
         {/* Particle Hero Section */}
-        <ParticleHero />
+        <Hero />
 
         <main className="flex flex-col items-center w-full">
           <About />
