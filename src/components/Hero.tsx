@@ -1,5 +1,5 @@
 import WorldShippingIcon from "./Icons/WorldShippingIcon";
-import { ParticleTextEffect } from "./Particlesanim";
+import  ParticleTextEffect  from "./Particlesanim";
 
 export default function Hero() {
   return (

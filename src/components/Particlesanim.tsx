@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 
 interface Vector2D {
   x: number
@@ -25,7 +25,6 @@ class Particle {
   colorBlendRate = 0.01
 
   move() {
-    // Check if particle is close enough to its target to slow down
     let proximityMult = 1
     const distance = Math.sqrt(Math.pow(this.pos.x - this.target.x, 2) + Math.pow(this.pos.y - this.target.y, 2))
 
@@ -33,7 +32,6 @@ class Particle {
       proximityMult = distance / this.closeEnoughTarget
     }
 
-    // Add force towards target
     const towardsTarget = {
       x: this.target.x - this.pos.x,
       y: this.target.y - this.pos.y,
@@ -59,7 +57,6 @@ class Particle {
     this.acc.x += steer.x
     this.acc.y += steer.y
 
-    // Move particle
     this.vel.x += this.acc.x
     this.vel.y += this.acc.y
     this.pos.x += this.vel.x
@@ -69,12 +66,10 @@ class Particle {
   }
 
   draw(ctx: CanvasRenderingContext2D, drawAsPoints: boolean) {
-    // Blend towards target color
     if (this.colorWeight < 1.0) {
       this.colorWeight = Math.min(this.colorWeight + this.colorBlendRate, 1.0)
     }
 
-    // Calculate current color
     const currentColor = {
       r: Math.round(this.startColor.r + (this.targetColor.r - this.startColor.r) * this.colorWeight),
       g: Math.round(this.startColor.g + (this.targetColor.g - this.startColor.g) * this.colorWeight),
@@ -94,12 +89,10 @@ class Particle {
 
   kill(width: number, height: number) {
     if (!this.isKilled) {
-      // Set target outside the scene
       const randomPos = this.generateRandomPos(width / 2, height / 2, (width + height) / 2)
       this.target.x = randomPos.x
       this.target.y = randomPos.y
 
-      // Begin blending color to black
       this.startColor = {
         r: this.startColor.r + (this.targetColor.r - this.startColor.r) * this.colorWeight,
         g: this.startColor.g + (this.targetColor.g - this.startColor.g) * this.colorWeight,
@@ -138,22 +131,24 @@ interface ParticleTextEffectProps {
   words?: string[]
 }
 
-const DEFAULT_WORDS = ["WELCOME ", "To The", "WORLD", "OF", "WONDERS"]
+const DEFAULT_WORDS = ["WELCOME", "TO THE", "WORLD", "OF", "WONDERS"]
 
-export function ParticleTextEffect({ words = DEFAULT_WORDS }: ParticleTextEffectProps) {
+export default function ParticleTextEffect({ words = DEFAULT_WORDS }: ParticleTextEffectProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
   const animationRef = useRef<number>()
   const particlesRef = useRef<Particle[]>([])
   const frameCountRef = useRef(0)
   const wordIndexRef = useRef(0)
   const mouseRef = useRef({ x: 0, y: 0, isPressed: false, isRightClick: false })
+  const [dimensions, setDimensions] = useState({ width: 800, height: 400 })
 
   const pixelSteps = 6
   const drawAsPoints = true
 
-  const generateRandomPos = (x: number, y: number, mag: number): Vector2D => {
-    const randomX = Math.random() * 1000
-    const randomY = Math.random() * 500
+  const generateRandomPos = (x: number, y: number, mag: number, w: number, h: number): Vector2D => {
+    const randomX = Math.random() * w
+    const randomY = Math.random() * h
 
     const direction = {
       x: randomX - x,
@@ -173,17 +168,15 @@ export function ParticleTextEffect({ words = DEFAULT_WORDS }: ParticleTextEffect
   }
 
   const nextWord = (word: string, canvas: HTMLCanvasElement) => {
-    // const ctx = canvas.getContext("2d")!
-
-    // Create off-screen canvas for text rendering
     const offscreenCanvas = document.createElement("canvas")
     offscreenCanvas.width = canvas.width
     offscreenCanvas.height = canvas.height
-    const offscreenCtx = offscreenCanvas.getContext("2d")!
+    const offscreenCtx = offscreenCanvas.getContext("2d")
+    if (!offscreenCtx) return
 
-    // Draw text
+    const fontSize = Math.min(canvas.width / 6, 100)
     offscreenCtx.fillStyle = "white"
-    offscreenCtx.font = "bold 100px Arial"
+    offscreenCtx.font = `bold ${fontSize}px Arial`
     offscreenCtx.textAlign = "center"
     offscreenCtx.textBaseline = "middle"
     offscreenCtx.fillText(word, canvas.width / 2, canvas.height / 2)
@@ -191,7 +184,6 @@ export function ParticleTextEffect({ words = DEFAULT_WORDS }: ParticleTextEffect
     const imageData = offscreenCtx.getImageData(0, 0, canvas.width, canvas.height)
     const pixels = imageData.data
 
-    // Generate new color
     const newColor = {
       r: Math.random() * 255,
       g: Math.random() * 255,
@@ -201,13 +193,11 @@ export function ParticleTextEffect({ words = DEFAULT_WORDS }: ParticleTextEffect
     const particles = particlesRef.current
     let particleIndex = 0
 
-    // Collect coordinates
     const coordsIndexes: number[] = []
     for (let i = 0; i < pixels.length; i += pixelSteps * 4) {
       coordsIndexes.push(i)
     }
 
-    // Shuffle coordinates for fluid motion
     for (let i = coordsIndexes.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1))
       ;[coordsIndexes[i], coordsIndexes[j]] = [coordsIndexes[j], coordsIndexes[i]]
@@ -230,7 +220,7 @@ export function ParticleTextEffect({ words = DEFAULT_WORDS }: ParticleTextEffect
         } else {
           particle = new Particle()
 
-          const randomPos = generateRandomPos(canvas.width / 2, canvas.height / 2, (canvas.width + canvas.height) / 2)
+          const randomPos = generateRandomPos(canvas.width / 2, canvas.height / 2, (canvas.width + canvas.height) / 2, canvas.width, canvas.height)
           particle.pos.x = randomPos.x
           particle.pos.y = randomPos.y
 
@@ -242,7 +232,6 @@ export function ParticleTextEffect({ words = DEFAULT_WORDS }: ParticleTextEffect
           particles.push(particle)
         }
 
-        // Set color transition
         particle.startColor = {
           r: particle.startColor.r + (particle.targetColor.r - particle.startColor.r) * particle.colorWeight,
           g: particle.startColor.g + (particle.targetColor.g - particle.startColor.g) * particle.colorWeight,
@@ -256,7 +245,6 @@ export function ParticleTextEffect({ words = DEFAULT_WORDS }: ParticleTextEffect
       }
     }
 
-    // Kill remaining particles
     for (let i = particleIndex; i < particles.length; i++) {
       particles[i].kill(canvas.width, canvas.height)
     }
@@ -266,20 +254,19 @@ export function ParticleTextEffect({ words = DEFAULT_WORDS }: ParticleTextEffect
     const canvas = canvasRef.current
     if (!canvas) return
 
-    const ctx = canvas.getContext("2d")!
+    const ctx = canvas.getContext("2d")
+    if (!ctx) return
+
     const particles = particlesRef.current
 
-    // Background with motion blur
     ctx.fillStyle = "rgba(255, 255, 255, 0.1)"
     ctx.fillRect(0, 0, canvas.width, canvas.height)
 
-    // Update and draw particles
     for (let i = particles.length - 1; i >= 0; i--) {
       const particle = particles[i]
       particle.move()
       particle.draw(ctx, drawAsPoints)
 
-      // Remove dead particles that are out of bounds
       if (particle.isKilled) {
         if (
           particle.pos.x < 0 ||
@@ -292,7 +279,6 @@ export function ParticleTextEffect({ words = DEFAULT_WORDS }: ParticleTextEffect
       }
     }
 
-    // Handle mouse interaction
     if (mouseRef.current.isPressed && mouseRef.current.isRightClick) {
       particles.forEach((particle) => {
         const distance = Math.sqrt(
@@ -304,7 +290,6 @@ export function ParticleTextEffect({ words = DEFAULT_WORDS }: ParticleTextEffect
       })
     }
 
-    // Auto-advance words
     frameCountRef.current++
     if (frameCountRef.current % 240 === 0) {
       wordIndexRef.current = (wordIndexRef.current + 1) % words.length
@@ -315,25 +300,66 @@ export function ParticleTextEffect({ words = DEFAULT_WORDS }: ParticleTextEffect
   }
 
   useEffect(() => {
+    const updateSize = () => {
+      if (containerRef.current) {
+        const width = Math.min(containerRef.current.offsetWidth - 40, 800)
+        const height = width * 0.5
+        setDimensions({ width, height })
+      }
+    }
+
+    updateSize()
+    window.addEventListener('resize', updateSize)
+
+    return () => {
+      window.removeEventListener('resize', updateSize)
+    }
+  }, [])
+
+  useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
 
-    canvas.width = 1000
-    canvas.height = 500
+    canvas.width = dimensions.width
+    canvas.height = dimensions.height
 
-    // Initialize with first word
+    particlesRef.current = []
+    frameCountRef.current = 0
+    wordIndexRef.current = 0
+
     nextWord(words[0], canvas)
-
-    // Start animation
+    
+    if (animationRef.current) {
+      cancelAnimationFrame(animationRef.current)
+    }
     animate()
 
-    // Mouse event handlers
+    const getCoords = (e: MouseEvent | Touch, rect: DOMRect) => {
+      const scaleX = canvas.width / rect.width
+      const scaleY = canvas.height / rect.height
+      return {
+        x: (e.clientX - rect.left) * scaleX,
+        y: (e.clientY - rect.top) * scaleY
+      }
+    }
+
     const handleMouseDown = (e: MouseEvent) => {
       mouseRef.current.isPressed = true
       mouseRef.current.isRightClick = e.button === 2
       const rect = canvas.getBoundingClientRect()
-      mouseRef.current.x = e.clientX - rect.left
-      mouseRef.current.y = e.clientY - rect.top
+      const coords = getCoords(e, rect)
+      mouseRef.current.x = coords.x
+      mouseRef.current.y = coords.y
+    }
+
+    const handleTouchStart = (e: TouchEvent) => {
+      e.preventDefault()
+      mouseRef.current.isPressed = true
+      mouseRef.current.isRightClick = false
+      const rect = canvas.getBoundingClientRect()
+      const coords = getCoords(e.touches[0], rect)
+      mouseRef.current.x = coords.x
+      mouseRef.current.y = coords.y
     }
 
     const handleMouseUp = () => {
@@ -343,8 +369,17 @@ export function ParticleTextEffect({ words = DEFAULT_WORDS }: ParticleTextEffect
 
     const handleMouseMove = (e: MouseEvent) => {
       const rect = canvas.getBoundingClientRect()
-      mouseRef.current.x = e.clientX - rect.left
-      mouseRef.current.y = e.clientY - rect.top
+      const coords = getCoords(e, rect)
+      mouseRef.current.x = coords.x
+      mouseRef.current.y = coords.y
+    }
+
+    const handleTouchMove = (e: TouchEvent) => {
+      e.preventDefault()
+      const rect = canvas.getBoundingClientRect()
+      const coords = getCoords(e.touches[0], rect)
+      mouseRef.current.x = coords.x
+      mouseRef.current.y = coords.y
     }
 
     const handleContextMenu = (e: MouseEvent) => {
@@ -355,6 +390,9 @@ export function ParticleTextEffect({ words = DEFAULT_WORDS }: ParticleTextEffect
     canvas.addEventListener("mouseup", handleMouseUp)
     canvas.addEventListener("mousemove", handleMouseMove)
     canvas.addEventListener("contextmenu", handleContextMenu)
+    canvas.addEventListener("touchstart", handleTouchStart, { passive: false })
+    canvas.addEventListener("touchend", handleMouseUp)
+    canvas.addEventListener("touchmove", handleTouchMove, { passive: false })
 
     return () => {
       if (animationRef.current) {
@@ -364,17 +402,19 @@ export function ParticleTextEffect({ words = DEFAULT_WORDS }: ParticleTextEffect
       canvas.removeEventListener("mouseup", handleMouseUp)
       canvas.removeEventListener("mousemove", handleMouseMove)
       canvas.removeEventListener("contextmenu", handleContextMenu)
+      canvas.removeEventListener("touchstart", handleTouchStart)
+      canvas.removeEventListener("touchend", handleMouseUp)
+      canvas.removeEventListener("touchmove", handleTouchMove)
     }
-  }, [])
+  }, [dimensions, words])
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen  p-4">
+    <div ref={containerRef} className="w-full flex items-center justify-center">
       <canvas
         ref={canvasRef}
         className="border border-gray-800 rounded-lg shadow-2xl"
-        style={{ maxWidth: "100%", height: "auto" }}
+        style={{ width: '100%', height: 'auto', display: 'block' }}
       />
-      
     </div>
   )
 }
