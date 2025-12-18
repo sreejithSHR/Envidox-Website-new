@@ -1,20 +1,21 @@
-import  { useRef, useEffect, useState } from 'react';
-import { Play, Calendar, ArrowRight, ArrowLeft, GamepadIcon, Star, } from 'lucide-react';
+import { useRef, useEffect, useState } from 'react';
+import { Play, Calendar, ArrowRight, ArrowLeft, Gamepad2, Star } from 'lucide-react';
 
 const GameInDevelopment = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   const gameData = {
-    title: "Chrono Nexus",
-    subtitle: "A Time-Bending Adventure RPG",
+    title: "Dead Frieght",
+    subtitle: "Wheels of Stormfront",
+    coverArt: "https://cdn.jsdelivr.net/gh/sreejithSHR/solanki-assets@main/1743618326829.jpg",
     media: [
-      { type: "screenshot", src: "/game/screenshot1.jpg", title: "Ancient Ruins" },
-      { type: "concept", src: "/game/concept1.jpg", title: "Character Art" },
-      { type: "screenshot", src: "/game/screenshot2.jpg", title: "Combat System" },
-      { type: "environment", src: "/game/environment1.jpg", title: "Futuristic City" },
-      { type: "concept", src: "/game/concept2.jpg", title: "Creature Designs" },
-      { type: "screenshot", src: "/game/screenshot3.jpg", title: "Time Mechanics" }
+      { type: "screenshot", src: "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=800&h=450&fit=crop", title: "Ancient Ruins" },
+      { type: "concept", src: "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=800&h=450&fit=crop", title: "Character Art" },
+      { type: "screenshot", src: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&h=450&fit=crop", title: "Combat System" },
+      { type: "environment", src: "https://images.unsplash.com/photo-1480796927426-f609979314bd?w=800&h=450&fit=crop", title: "Futuristic City" },
+      { type: "concept", src: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&h=450&fit=crop", title: "Creature Designs" },
+      { type: "screenshot", src: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&h=450&fit=crop", title: "Time Mechanics" }
     ]
   };
 
@@ -177,7 +178,7 @@ const GameInDevelopment = () => {
                 ? 'bg-gray-800/80 backdrop-blur-sm border-gray-600' 
                 : 'bg-white/80 backdrop-blur-sm border-gray-200'
             }`}>
-              <GamepadIcon className={`w-4 h-4 transition-colors duration-500 ${
+              <Gamepad2 className={`w-4 h-4 transition-colors duration-500 ${
                 isVisible ? 'text-green-400' : 'text-green-600'
               }`} />
               <span className={`text-sm font-medium transition-colors duration-500 ${
@@ -202,17 +203,15 @@ const GameInDevelopment = () => {
           }`}>
             {/* Game Art - Stormy Background */}
             <div className="aspect-[4/3] md:aspect-video relative overflow-hidden">
-              {/* Animated Storm Background */}
-              <div className={`absolute inset-0 transition-all duration-1000 ${
-                isVisible 
-                  ? 'bg-gradient-to-br from-gray-800 via-blue-900 to-purple-900' 
-                  : 'bg-gradient-to-br from-purple-900/50 to-blue-900/50'
-              }`}>
-                {/* Lightning effect overlay */}
-                <div className={`absolute inset-0 bg-yellow-200 transition-opacity duration-100 ${
-                  isVisible ? 'opacity-0' : 'opacity-0'
-                }`} id="storm-lightning" />
-              </div>
+              {/* Background Image */}
+              <img 
+                src={gameData.coverArt}
+                alt="Game Cover Art"
+                className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000`}
+              />
+              
+              {/* Animated Storm Background Overlay */}
+              
               
               {/* Storm particles */}
               <div className={`absolute inset-0 transition-opacity duration-1000 ${
@@ -234,20 +233,9 @@ const GameInDevelopment = () => {
               {/* Game Content */}
               <div className="relative z-10 w-full h-full flex items-center justify-center">
                 <div className="text-center text-white">
-                  <div className={`w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mx-auto mb-4 transition-all duration-500 ${
-                    isVisible 
-                      ? 'bg-gradient-to-br from-gray-700/80 to-gray-900/80 backdrop-blur-sm border border-gray-600' 
-                      : 'bg-white/10 backdrop-blur-sm border border-white/20'
-                  }`}>
-                    <GamepadIcon className={`w-8 h-8 md:w-10 md:h-10 transition-colors duration-500 ${
-                      isVisible ? 'text-green-400' : 'text-white/80'
-                    }`} />
+                  <div className={`w-20 h-20 md:w-24 md:h-24 rounded-2xl flex items-center justify-center mx-auto mb-4 transition-all duration-500 `}>
+                    
                   </div>
-                  <span className={`text-sm transition-colors duration-500 ${
-                    isVisible ? 'text-gray-300' : 'text-white/60'
-                  }`}>
-                    Game Cover Art
-                  </span>
                 </div>
               </div>
               
@@ -281,7 +269,7 @@ const GameInDevelopment = () => {
                     <span className={`font-semibold transition-colors duration-500 ${
                       isVisible ? 'text-yellow-100' : 'text-white'
                     }`}>
-                      Coming 2024
+                      Coming Soon
                     </span>
                   </div>
                 </div>
@@ -296,7 +284,7 @@ const GameInDevelopment = () => {
                   : 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white'
               }`}>
                 <Star className="w-5 h-5" />
-                Wishlist on Steam
+                Know More
               </button>
             </div>
           </div>
@@ -349,22 +337,15 @@ const GameInDevelopment = () => {
                   {/* Image Card */}
                   <div className={`aspect-video rounded-2xl overflow-hidden relative group transition-all duration-500 ${
                     isVisible 
-                      ? 'bg-gradient-to-br from-gray-800 to-gray-700 border border-gray-600' 
-                      : 'bg-gradient-to-br from-gray-100 to-gray-200'
+                      ? 'bg-gray-800 border border-gray-600' 
+                      : 'bg-gray-100'
                   }`}>
-                    {/* Image placeholder */}
-                    <div className="w-full h-full flex items-center justify-center">
-                      <div className="text-center">
-                        <GamepadIcon className={`w-8 h-8 md:w-10 md:h-10 mx-auto mb-2 transition-colors duration-500 ${
-                          isVisible ? 'text-gray-400' : 'text-gray-400'
-                        }`} />
-                        <span className={`text-xs md:text-sm transition-colors duration-500 ${
-                          isVisible ? 'text-gray-400' : 'text-gray-500'
-                        }`}>
-                          {media.title}
-                        </span>
-                      </div>
-                    </div>
+                    {/* Actual Image */}
+                    <img 
+                      src={media.src}
+                      alt={media.title}
+                      className="w-full h-full object-cover"
+                    />
                     
                     {/* Hover play button */}
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300 flex items-center justify-center">
@@ -398,7 +379,7 @@ const GameInDevelopment = () => {
                   : 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white'
               }`}>
                 <Star className="w-5 h-5" />
-                Wishlist on Steam
+                Know More
               </button>
             </div>
           </div>
@@ -675,6 +656,10 @@ const GameInDevelopment = () => {
             transform: translateY(40px);
             opacity: 0;
           }
+        }
+
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
         }
       `}</style>
     </>

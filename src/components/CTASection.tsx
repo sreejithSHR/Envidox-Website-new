@@ -10,7 +10,7 @@ export default function CTASection() {
       <div className="relative z-10 max-w-2xl mx-auto">
         <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-50 rounded-full border border-gray-200 mb-6">
           <Star className="w-4 h-4 text-blue-600 fill-blue-600" />
-          <span className="text-sm font-medium text-gray-700">Join 10,000+ Happy Players</span>
+          <span className="text-sm font-medium text-gray-700">Be A Part</span>
         </div>
 
         <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 tracking-tight">
@@ -18,13 +18,13 @@ export default function CTASection() {
         </h2>
 
         <p className="text-xl text-gray-600 mb-10 leading-relaxed">
-          Stop reading and start playing. Download now and get 3 free worlds to explore. No credit card, no weird commitments.
+          Just Connect with us that helps your ideas and dreams turn to reality
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button className="group relative px-8 py-4 bg-gray-900 text-white rounded-2xl font-semibold overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl">
             <span className="relative z-10 flex items-center justify-center gap-2">
-              Download Free
+              Know more
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-violet-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

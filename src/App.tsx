@@ -64,24 +64,24 @@ export default function App() {
           <section className="w-full py-20">
             <div className="mx-auto max-w-[1100px]">
               <div className="bg-gradient-to-br from-green-50 to-cyan-50 rounded-3xl p-10 border border-gray-100 shadow-lg relative overflow-hidden">
-                <h3 className="text-4xl font-bold text-gray-900 mb-4 text-center">How It Works</h3>
-                <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">Getting started is easier than making instant noodles.</p>
+                <h3 className="text-4xl font-bold text-gray-900 mb-4 text-center">How We Work</h3>
+                <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">Having an Idea Is always the change</p>
 
                 <div className="grid gap-6 md:grid-cols-3">
                   <div className="bg-white p-6 rounded-2xl border border-gray-100">
                     <div className="text-3xl font-bold mb-2">01</div>
-                    <h5 className="font-semibold mb-2">Download</h5>
-                    <p className="text-gray-600 text-sm">Grab the app from your headset's store. Takes like 2 minutes.</p>
+                    <h5 className="font-semibold mb-2">Ideate</h5>
+                    <p className="text-gray-600 text-sm">Start with an Idea of you want</p>
                   </div>
                   <div className="bg-white p-6 rounded-2xl border border-gray-100">
                     <div className="text-3xl font-bold mb-2">02</div>
-                    <h5 className="font-semibold mb-2">Pick a World</h5>
-                    <p className="text-gray-600 text-sm">Browse 50+ experiences. They're all awesome, promise.</p>
+                    <h5 className="font-semibold mb-2">Innovate</h5>
+                    <p className="text-gray-600 text-sm">An Idea can evolve Larger and Stroger</p>
                   </div>
                   <div className="bg-white p-6 rounded-2xl border border-gray-100">
                     <div className="text-3xl font-bold mb-2">03</div>
-                    <h5 className="font-semibold mb-2">Have Fun</h5>
-                    <p className="text-gray-600 text-sm">That's it. Seriously. No tutorials, no BS.</p>
+                    <h5 className="font-semibold mb-2">Initiate</h5>
+                    <p className="text-gray-600 text-sm">Initiate your ideas into developmet</p>
                   </div>
                 </div>
               </div>
