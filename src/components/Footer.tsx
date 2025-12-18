@@ -6,9 +6,9 @@ export default function Footer() {
       <div className="max-w-[1200px] mx-auto px-6 py-16">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div className="md:col-span-1">
-            <div className="text-2xl font-bold text-gray-900 mb-4">VR Fun</div>
+            <div className="text-2xl font-bold text-gray-900 mb-4">Envidox Solutions</div>
             <p className="text-gray-600 text-sm leading-relaxed">
-              Making virtual reality ridiculously fun since 2024. Reality is overrated anyway.
+              Making reality ridiculously fun since 2024. Reality is overrated anyway.
             </p>
           </div>
 
@@ -46,11 +46,11 @@ export default function Footer() {
         <div className="border-t border-gray-200/50 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
             <div className="flex items-center gap-2 text-gray-600">
-              Made with <Heart className="w-4 h-4 fill-red-500 text-red-500" /> by VR enthusiasts
+              Made with <Heart className="w-4 h-4 fill-red-500 text-red-500" /> by Fun enthusiasts in Envidox
             </div>
 
             <p className="text-gray-500">
-              © 2025 VR Fun. All rights reserved.
+              © 2025 Envidox Solutions. All rights reserved.
             </p>
 
             <div className="flex gap-6">
