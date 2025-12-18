@@ -1,4 +1,5 @@
 import WorldShippingIcon from "./Icons/WorldShippingIcon";
+import { ParticleTextEffect } from "./Particlesanim";
 
 export default function Hero() {
   return (
@@ -38,12 +39,8 @@ export default function Hero() {
         {/* Mocked browser / product screenshot placeholder */}
         <div className="mt-12 rounded-3xl border border-gray-100 overflow-hidden shadow-2xl mx-auto" style={{maxWidth: 980}}>
           <div className="bg-white p-6">
-            <div className="rounded-xl border border-gray-100 p-8 text-sm text-gray-500">
-              {/* This is where you would place your screenshot or interactive embed */}
-              <div className="h-[260px] bg-gray-50 rounded-md flex items-center justify-center text-gray-300">
-                Product screenshot / embed
-              </div>
-            </div>
+            <ParticleTextEffect />
+            
           </div>
         </div>
       </div>
