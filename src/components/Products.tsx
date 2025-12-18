@@ -115,43 +115,31 @@ const Products = () => {
         icon: Monitor,
         title: "Dashboard Preview",
         description: "Interactive analytics and workflow management",
-        gradient: "from-purple-400 to-pink-400"
+        gradient: "from-purple-400 to-pink-400",
+        image: "https://via.placeholder.com/800x600/9333ea/ffffff?text=Envichat+Dashboard"
       },
       security: {
         icon: Shield,
         title: "Security Dashboard",
         description: "Real-time monitoring and threat detection",
-        gradient: "from-blue-400 to-cyan-400"
+        gradient: "from-blue-400 to-cyan-400",
+        image: "https://via.placeholder.com/800x600/3b82f6/ffffff?text=Production+Crate+Dashboard"
       },
       collaboration: {
         icon: Users,
         title: "Team Workspace",
         description: "Collaborative environment with video calls",
-        gradient: "from-green-400 to-emerald-400"
+        gradient: "from-green-400 to-emerald-400",
+        image: "https://via.placeholder.com/800x600/10b981/ffffff?text=NXL3D+Dashboard"
       }
     };
 
     const preview = previews[type as keyof typeof previews] || previews.dashboard;
-    const PreviewIcon = preview.icon;
 
     return (
-      <div className={`w-full h-full rounded-2xl bg-gradient-to-br ${preview.gradient} flex flex-col items-center justify-center text-white p-4 md:p-8 relative overflow-hidden`}>
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-0 w-full h-full bg-black/10"></div>
-        </div>
-        
-        {/* Preview Content */}
-        <div className="relative z-10 text-center">
-          <div className="w-12 h-12 md:w-16 md:h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-3 md:mb-4 backdrop-blur-sm">
-            <PreviewIcon className="w-6 h-6 md:w-8 md:h-8 text-white" />
-          </div>
-          <h3 className="text-lg md:text-xl font-bold mb-2">{preview.title}</h3>
-          <p className="text-white/80 text-xs md:text-sm">{preview.description}</p>
-        </div>
-
+      <div className={`w-full h-full rounded-2xl bg-gradient-to-br ${preview.gradient} flex flex-col items-center justify-center text-white relative overflow-hidden`}>
         {/* Mock Browser/Device Frame */}
-        <div className="absolute top-3 left-3 right-3 md:top-4 md:left-4 md:right-4 flex items-center gap-2">
+        <div className="absolute top-3 left-3 right-3 md:top-4 md:left-4 md:right-4 flex items-center gap-2 z-20">
           <div className="flex gap-1">
             <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-red-400"></div>
             <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-yellow-400"></div>
@@ -161,6 +149,16 @@ const Products = () => {
             <span className="text-xs text-white/60">app.thinkbot.com/{type}</span>
           </div>
         </div>
+
+        {/* Placeholder Image */}
+        <img 
+          src={preview.image} 
+          alt={preview.title}
+          className="absolute inset-0 w-full h-full object-cover opacity-80"
+        />
+        
+        {/* Overlay gradient */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
       </div>
     );
   };
