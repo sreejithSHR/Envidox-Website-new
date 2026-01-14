@@ -313,11 +313,11 @@ function Root() {
 
           {/* Nav Links - Hidden on mobile, visible on md+ */}
           <ul className="hidden md:flex items-center gap-6 lg:gap-8 text-gray-700 text-sm font-medium">
-            <li className="hover:text-gray-900 transition-colors cursor-pointer">About</li>
-            <li className="hover:text-gray-900 transition-colors cursor-pointer">Services</li>
-            <li className="hover:text-gray-900 transition-colors cursor-pointer">Products</li>
-            <li className="hover:text-gray-900 transition-colors cursor-pointer">World Of 3D</li>
-            <li className="hover:text-gray-900 transition-colors cursor-pointer">Games</li>
+            <li onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth', block: 'start' })} className="hover:text-gray-900 transition-colors cursor-pointer">About</li>
+            <li onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth', block: 'start' })} className="hover:text-gray-900 transition-colors cursor-pointer">Services</li>
+            <li onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth', block: 'start' })} className="hover:text-gray-900 transition-colors cursor-pointer">Products</li>
+            <li onClick={() => document.getElementById('world-of-3d')?.scrollIntoView({ behavior: 'smooth', block: 'start' })} className="hover:text-gray-900 transition-colors cursor-pointer">World Of 3D</li>
+            <li onClick={() => document.getElementById('games')?.scrollIntoView({ behavior: 'smooth', block: 'start' })} className="hover:text-gray-900 transition-colors cursor-pointer">Games</li>
           </ul>
 
           {/* Mobile Menu Button - Visible on mobile */}
@@ -339,15 +339,14 @@ function Root() {
         </div>
       </main>
 
-      {/* ===== Mobile Bottom Navigation - Enhanced visibility ===== */}
-      <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-3rem)] sm:w-[calc(100%-4rem)] md:hidden">
-        <nav className="flex justify-around items-center px-4 py-3 bg-white/95 backdrop-blur-md rounded-full border-2 border-gray-300/80 shadow-[0_8px_32px_rgba(0,0,0,0.15)]">
-          <button className="text-xs text-gray-700 font-medium hover:text-gray-900 transition-colors px-2 py-1">About</button>
-          <button className="text-xs text-gray-700 font-medium hover:text-gray-900 transition-colors px-2 py-1">Services</button>
-          <button className="text-xs text-gray-700 font-medium hover:text-gray-900 transition-colors px-2 py-1">Products</button>
-          <button className="text-xs text-gray-700 font-medium hover:text-gray-900 transition-colors px-2 py-1">World Of 3D</button>
-        </nav>
-      </div>
+      {/* Nav Links - Hidden on mobile, visible on md+ */}
+          <ul className="hidden md:flex items-center gap-6 lg:gap-8 text-gray-700 text-sm font-medium">
+            <li onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth', block: 'start' })} className="hover:text-gray-900 transition-colors cursor-pointer">About</li>
+            <li onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth', block: 'start' })} className="hover:text-gray-900 transition-colors cursor-pointer">Services</li>
+            <li onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth', block: 'start' })} className="hover:text-gray-900 transition-colors cursor-pointer">Products</li>
+            <li onClick={() => document.getElementById('world-of-3d')?.scrollIntoView({ behavior: 'smooth', block: 'start' })} className="hover:text-gray-900 transition-colors cursor-pointer">World Of 3D</li>
+            <li onClick={() => document.getElementById('games')?.scrollIntoView({ behavior: 'smooth', block: 'start' })} className="hover:text-gray-900 transition-colors cursor-pointer">Games</li>
+          </ul>
     </div>
   );
 }

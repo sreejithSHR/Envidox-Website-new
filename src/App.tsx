@@ -1,7 +1,4 @@
-
-
 import Hero from "./components/Hero";
-
 import CTASection from "./components/CTASection";
 import Footer from "./components/Footer";
 import OrbitingCircles from "./components/orbiting"
@@ -13,18 +10,9 @@ import VirtualTourShowcase from "./components/Virtualtours";
 import CoursesSection from "./components/CoursesSection";
 import GameInDevelopment from "./components/Gamedev"
 
-
-
-
-
-
-
-
 export default function App() {
-  
-
   return (
-    <div className="min-h-screen  text-gray-900 relative overflow-hidden">
+    <div className="min-h-screen text-gray-900 relative overflow-hidden">
       {/* Top/sides symmetry lines & subtle background */}
       <div className="fixed inset-0 pointer-events-none z-0">
         {/* thin top/side guide lines */}
@@ -46,27 +34,33 @@ export default function App() {
 
       {/* Content */}
       <div className="relative z-10">
-        
-
         <main className="flex flex-col items-center">
           <Hero />
-          <About />
+          
+          <section id="about">
+            <About />
+          </section>
+          
           <OrbitingCircles />
-          <Services />
-          <Products />
-          <WorldOf3D />
+          
+          <section id="services">
+            <Services />
+          </section>
+          
+          <section id="products">
+            <Products />
+          </section>
+          
+          <section id="world-of-3d">
+            <WorldOf3D />
+          </section>
+          
           <VirtualTourShowcase />
-          <CoursesSection
-            formUrl="YOUR_FORM_URL_HERE"
-            masterclassDate="2026-02-15T14:00:00"
-            courseImageUrl="https://images.pexels.com/photos/3862630/pexels-photo-3862630.jpeg?auto=compress&cs=tinysrgb&w=600"
-            posterImageUrl="https://images.pexels.com/photos/3807517/pexels-photo-3807517.jpeg?auto=compress&cs=tinysrgb&w=600"
-          />
-          <GameInDevelopment />
-
+          <CoursesSection />
           
-
-          
+          <section id="games">
+            <GameInDevelopment />
+          </section>
 
           <section className="w-full py-20">
             <div className="mx-auto max-w-[1100px]">
