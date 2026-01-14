@@ -10,6 +10,7 @@ import Services from "./components/Services";
 import Products from "./components/Products";
 import WorldOf3D from "./components/Worldof3d";
 import VirtualTourShowcase from "./components/Virtualtours";
+import CoursesSection from "./components/CoursesSection";
 import GameInDevelopment from "./components/Gamedev"
 
 
@@ -55,6 +56,12 @@ export default function App() {
           <Products />
           <WorldOf3D />
           <VirtualTourShowcase />
+          <CoursesSection
+            formUrl="YOUR_FORM_URL_HERE"
+            masterclassDate="2026-02-15T14:00:00"
+            courseImageUrl="https://images.pexels.com/photos/3862630/pexels-photo-3862630.jpeg?auto=compress&cs=tinysrgb&w=600"
+            posterImageUrl="https://images.pexels.com/photos/3807517/pexels-photo-3807517.jpeg?auto=compress&cs=tinysrgb&w=600"
+          />
           <GameInDevelopment />
 
           
