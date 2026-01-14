@@ -70,11 +70,11 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 };
 
 const CoursesSection = ({
-  formUrl1 = 'https://forms.google.com/your-unreal-form',
-  formUrl2 = 'https://forms.google.com/your-masterclass-form',
-  masterclassDate = '2026-01-24T18:00:00',
-  courseImageUrl = 'https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg?auto=compress&cs=tinysrgb&w=1200',
-  posterImageUrl = 'https://images.pexels.com/photos/7915286/pexels-photo-7915286.jpeg?auto=compress&cs=tinysrgb&w=1200',
+  formUrl1 = 'https://forms.gle/pZHu4HfCqQ5W6wdM8',
+  formUrl2 = 'https://forms.gle/gniqb52DSs8kR8eY8',
+  masterclassDate = '2026-01-24T17:30:00',
+  courseImageUrl = 'https://cdn.jsdelivr.net/gh/sreejithSHR/solanki-assets@main/3.png',
+  posterImageUrl = 'https://cdn.jsdelivr.net/gh/sreejithSHR/solanki-assets@main/1.png',
   phoneNumber = '+916381810189',
 }: CourseProps) => {
 
@@ -252,12 +252,12 @@ const CoursesSection = ({
                 <img
                   src={courseImageUrl}
                   alt="Unreal Engine Course"
-                  className="w-full h-full object-cover object-center opacity-40 group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover object-center opacity-100 group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                 <div className="absolute top-4 left-4 right-4">
                   <span className="inline-block bg-purple-600 text-white px-4 py-2 rounded-lg font-bold text-sm shadow-lg">
-                    LIVE COURSE
+                    ONLINE COURSE
                   </span>
                 </div>
                 <div className="absolute bottom-4 left-4 right-4">
@@ -324,7 +324,7 @@ const CoursesSection = ({
                 <img
                   src={posterImageUrl}
                   alt="Live Masterclass"
-                  className="w-full h-full object-cover object-center opacity-50 group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover object-center opacity-100 group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
 

@@ -8,6 +8,7 @@ interface ServiceCardProps {
   features: string[];
   gradient: string;
 }
+const phoneNumber = "+916381810189";
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ 
   icon: Icon, 
@@ -184,9 +185,13 @@ const Services = () => {
               <button className="px-8 py-3 bg-black text-white rounded-full font-medium hover:bg-gray-800 transition-colors shadow-lg">
                 Get Started
               </button>
-              <button className="px-8 py-3 bg-white text-gray-700 rounded-full font-medium border border-gray-300 hover:bg-gray-50 transition-colors">
-                Schedule a Call
-              </button>
+              <a
+              href={`tel:${phoneNumber}`}
+
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-bold text-base hover:from-blue-700 hover:to-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl whitespace-nowrap"
+            >
+               Schedule a Call
+            </a>
             </div>
           </div>
         </div>
