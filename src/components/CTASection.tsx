@@ -3,11 +3,13 @@ import { ArrowRight, Star } from 'lucide-react';
 export default function CTASection() {
   return (
     <div className="relative bg-white/80 backdrop-blur-xl border border-gray-200/50 rounded-3xl p-12 md:p-16 overflow-hidden shadow-lg text-center">
+      
+      {/* Background glow */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-violet-500/5 to-cyan-500/5" />
-
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-gradient-to-br from-blue-400/20 to-violet-400/20 rounded-full blur-[120px]" />
 
       <div className="relative z-10 max-w-2xl mx-auto">
+
         <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-50 rounded-full border border-gray-200 mb-6">
           <Star className="w-4 h-4 text-blue-600 fill-blue-600" />
           <span className="text-sm font-medium text-gray-700">Be A Part</span>
@@ -18,10 +20,10 @@ export default function CTASection() {
         </h2>
 
         <p className="text-xl text-gray-600 mb-10 leading-relaxed">
-          Just Connect with us that helps your ideas and dreams turn to reality
+          Just connect with us and turn your ideas and dreams into reality.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <button className="group relative px-8 py-4 bg-gray-900 text-white rounded-2xl font-semibold overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl">
             <span className="relative z-10 flex items-center justify-center gap-2">
               Know more
@@ -35,9 +37,20 @@ export default function CTASection() {
           </button>
         </div>
 
+        {/* ---------- Embedded Contact Form ---------- */}
+        <div className="relative bg-white/70 backdrop-blur-xl rounded-2xl border border-gray-200/50 shadow-lg overflow-hidden">
+          <iframe
+            id="contact-form-0g70yh"
+            src="https://opnform.com/forms/contact-form-0g70yh"
+            className="w-full min-h-[600px] border-none"
+            loading="lazy"
+          />
+        </div>
+
         <p className="text-sm text-gray-500 mt-6">
           Available on Quest 2, Quest 3, PSVR 2, and SteamVR
         </p>
+
       </div>
     </div>
   );
